@@ -57,7 +57,7 @@ def write_captions_to_srt_file(vid_name,
 
 
 if __name__ == '__main__':
-    source_folder = '/Users/moritz.gross/Desktop/xentral_videos'
+    source_folder = '../videos/'
     dir_list = os.listdir(source_folder)
     shuffle(dir_list)
     for d in dir_list:
@@ -66,4 +66,4 @@ if __name__ == '__main__':
         write_captions_to_srt_file(vid_name=d,
                                    do_translation=True,
                                    source_folder=source_folder,
-                                   result_folder='/Users/moritz.gross/Desktop/xentral_srt_files')
+                                   result_folder='../srt_files/')
