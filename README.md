@@ -13,6 +13,8 @@ The results appear as [str-files](https://docs.fileformat.com/video/srt/) in the
 As these files are just couple 100 lines of plain text, they are pretty small. These files are ready to use.
 ![image](https://user-images.githubusercontent.com/115226411/215190980-b448ca16-40e1-44a2-8c74-0d8eac179c1c.png)
 
+Processing 1 hour of video takes ~45minutes, so preferably let the script run over night with power connected. 
+
 ### How does it work behind the hood? :flushed:
 - Extract audio from video
 - Run audio through a [neural network](https://arxiv.org/pdf/2212.04356.pdf) from a project named *whisper* that generates text with timestamps. 
