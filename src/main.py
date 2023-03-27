@@ -1,21 +1,18 @@
 """
 bli bla
 """
-import datetime
 import os
 from random import shuffle
 
 import whisper
-from cachier import cachier
 
 from replacements import apply_replacements
 from utils import format_float_to_time
 
 
-@cachier(stale_after=datetime.timedelta(days=100))
 def whisper_result_cached(path, language: str, do_translation=True):
     """bla"""
-    model = whisper.load_model('large')
+    model = whisper.load_model('large-v2')
     print("Starting transcription...")
     result = model.transcribe(
         audio=path,
@@ -42,9 +39,6 @@ def write_captions_to_srt_file(vid_name,
                                source_folder: str,
                                result_folder: str):
 
-    """
-    bli bla
-    """
     vid_path = source_folder + vid_name
     result = whisper_result_cached(vid_path, language='de', do_translation=do_translation)
     language_suffix = "_EN" if do_translation else "_DE"
@@ -64,6 +58,6 @@ if __name__ == '__main__':
         print('#' * 50)
         print(d, '\n')
         write_captions_to_srt_file(vid_name=d,
-                                   do_translation=True,
+                                   do_translation=False,
                                    source_folder=source_folder,
                                    result_folder='../srt_files/')
