@@ -1,4 +1,4 @@
-# academy_captions_clean
+# SRT files for Xentral Academy
 
 ### What is this repository for?
 

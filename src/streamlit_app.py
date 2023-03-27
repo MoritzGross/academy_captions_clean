@@ -3,8 +3,7 @@ import streamlit as st
 from download_from_youtube import download_audio_from_youtube
 from main import write_captions_to_srt_file
 
-st.title("SRT files for Xentral")
-
+st.markdown(open("README.md", "r").read())
 
 yt_url = st.text_input("Enter the youtube URL here")
 
